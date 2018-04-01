@@ -12,6 +12,7 @@
     <mvc:annotation-driven/>
 
     <!-- Define Spring MVC view resolver -->
+    <!-- The configuration for where to create our views for the spring application-->
     <bean
             class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/view/" />
@@ -19,6 +20,7 @@
     </bean>
 
     <!-- Step 1: Define Database DataSource / connection pool -->
+    <!-- The connection with the database is configured here-->
     <bean id="myDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
           destroy-method="close">
         <property name="driverClass" value="com.mysql.jdbc.Driver" />
@@ -33,19 +35,26 @@
     </bean>
 
     <!-- Step 2: Setup Hibernate session factory -->
+    <!-- All the params on how the app should speak with the database is configured here-->
     <bean id="sessionFactory"
           class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
         <property name="dataSource" ref="myDataSource" />
+
+        <!-- This is how spring will know where you can find the entities-->
         <property name="packagesToScan" value="com.webapp.entity" />
+
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
                 <prop key="hibernate.show_sql">true</prop>
             </props>
         </property>
+
     </bean>
 
     <!-- Step 3: Setup Hibernate transaction manager -->
+    <!-- Allow you to automatically handle all your transaction-->
+    <!-- No need to do begin() or commit() anymore-->
     <bean id="myTransactionManager"
           class="org.springframework.orm.hibernate5.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"/>
