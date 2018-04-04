@@ -6,7 +6,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -21,7 +20,7 @@ public class CustomerDAOImpl implements CustomerDAO {
     private SessionFactory sessionFactory;
 
     @Override
-    @Transactional
+    //  @Transactional  -> we will remove it here since we added a service which will delegate the DAO and manage the transaction (see in CustomerService)
     public List<Customer> getCustomers() {
         // get the hibernate session
         Session currentSession = sessionFactory.getCurrentSession();

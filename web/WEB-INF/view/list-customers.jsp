@@ -3,19 +3,21 @@
 <html>
 <head>
     <title>Costumer List</title>
+    <%-- Reference our style sheet --%>
+    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css">
 </head>
 <body>
-    <p>List Customer</p>
-
     <div id="wrapper">
         <div id="header">
             <h2>CRM - Customer Relationship Manager</h2>
         </div>
     </div>
+    <div></div>
     <div class="container">
         <div class="content">
             <table>
                 <tr>
+                    <th>id</th>
                     <th>FirstName</th>
                     <th>LastName</th>
                     <th>Email</th>
