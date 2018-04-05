@@ -10,4 +10,8 @@ import java.util.List;
 public interface CustomerDAO {
     public List<Customer> getCustomers();
     void saveCustomers(Customer theCustomer);
+
+    Customer getCustomer(int theId);
+
+    void deleteCustomer(int theId);
 }

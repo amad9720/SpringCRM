@@ -20,6 +20,7 @@
     <form:form action="saveCustomer" modelAttribute="customer" method="post" >
         <table>
             <tbody>
+            <form:hidden path="id" />
                 <tr>
                     <td><label for="firstname">Firstname :</label></td>
                     <td><form:input name="firstname" path="firstName"/></td>
