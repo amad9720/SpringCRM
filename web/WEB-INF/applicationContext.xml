@@ -19,6 +19,11 @@
         <property name="suffix" value=".jsp" />
     </bean>
 
+    <bean id="accountDAO"
+          class="com.webapp.aopdemo.dao.AccountDAO">
+
+    </bean>
+
     <!-- Step 1: Define Database DataSource / connection pool -->
     <!-- The connection with the database is configured here-->
     <bean id="myDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
@@ -41,7 +46,7 @@
         <property name="dataSource" ref="myDataSource" />
 
         <!-- This is how spring will know where you can find the entities-->
-        <property name="packagesToScan" value="com.webapp.entity" />
+        <!--<property name="packagesToScan" value="com.webapp.entity" />-->
 
         <property name="hibernateProperties">
             <props>

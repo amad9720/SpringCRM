@@ -37,5 +37,7 @@
     <orderEntry type="library" name="javax.servlet.jsp.jstl:javax.servlet.jsp.jstl-api:1.2.1" level="project" />
     <orderEntry type="library" name="org.glassfish.web:javax.servlet.jsp.jstl:1.2.1" level="project" />
     <orderEntry type="library" name="org.hibernate:hibernate-c3p0:5.3.0.Beta2" level="project" />
+    <orderEntry type="library" name="org.aspectj:aspectjrt:1.8.13" level="project" />
+    <orderEntry type="library" name="org.aspectj:aspectjweaver:1.8.13" level="project" />
   </component>
 </module>
