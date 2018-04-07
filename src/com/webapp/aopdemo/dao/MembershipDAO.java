@@ -1,5 +1,6 @@
 package com.webapp.aopdemo.dao;
 
+import com.webapp.aopdemo.Account;
 import org.springframework.stereotype.Component;
 
 /**
@@ -11,7 +12,8 @@ public class MembershipDAO {
         System.out.println(MembershipDAO.class + " Adding menbership");
     }
 
-    public void addBooba() {
-        System.out.println(MembershipDAO.class + " Adding menbership for Booba");
+    public String addBooba(Account account) {
+        System.out.println(MembershipDAO.class + " Adding menbership for " + account.getName() );
+        return account.getName();
     }
 }

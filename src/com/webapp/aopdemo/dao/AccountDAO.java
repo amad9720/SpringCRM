@@ -1,5 +1,6 @@
 package com.webapp.aopdemo.dao;
 
+import com.webapp.aopdemo.Account;
 import org.springframework.stereotype.Component;
 
 /**
@@ -8,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class AccountDAO {
 
-    public void addAccount() {
-        System.out.println(getClass() + " Creating a new account");
+    public void addAccount(Account account) {
+        System.out.println(getClass() + " Creating a new account for " + account.getName());
     }
 }
