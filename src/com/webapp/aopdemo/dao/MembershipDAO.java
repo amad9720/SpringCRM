@@ -8,11 +8,11 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class MembershipDAO {
-    public void addSilly() {
+    public void setSilly() {
         System.out.println(MembershipDAO.class + " Adding menbership");
     }
 
-    public String addBooba(Account account) {
+    public String getBooba(Account account) {
         System.out.println(MembershipDAO.class + " Adding menbership for " + account.getName() );
         return account.getName();
     }

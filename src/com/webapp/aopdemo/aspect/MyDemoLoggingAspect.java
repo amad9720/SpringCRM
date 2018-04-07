@@ -21,6 +21,16 @@ public class MyDemoLoggingAspect {
     @Pointcut("execution(* add*(..))")
     public void addMethodsPointcuts() {}
 
+    @Pointcut("execution(* get*(..))")
+    public void getter() {}
+
+    @Pointcut("execution(* set*(..))")
+    public void setter() {}
+
+    //    Combining pointcuts
+    @Pointcut("addMethodsPointcuts() && !(getter() || setter())")
+    public void forAddNoGetterSetter() {}
+
     @Before("addMethodsPointcuts()") //any method starting with add and having one arg of any type
     public void beforeAddAdvice() {
         System.out.println("\n=======>>> Executing @Before advice on addAccount");
@@ -31,10 +41,10 @@ public class MyDemoLoggingAspect {
         System.out.print("\n=======>>> Executing @Before the Analytics for the API");
     }
 
-
-
-
-
+    @Before("forAddNoGetterSetter()") //any method starting with add and having one arg of any type
+    public void NoGetterSetter() {
+        System.out.print("\n=======>>> Executing @Before add method that not a getter or setter");
+    }
 
 
 
