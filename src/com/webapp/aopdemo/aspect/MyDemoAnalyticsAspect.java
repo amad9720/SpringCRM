@@ -11,19 +11,16 @@ import org.springframework.stereotype.Component;
  */
 @Aspect
 @Component
-@Order(1)
-public class MyDemoLoggingAspect {
+@Order(2)
+public class MyDemoAnalyticsAspect {
 
     @Pointcut("execution(* add*(..))")
     public void addMethodsPointcuts() {}
 
     @Before("addMethodsPointcuts()") //any method starting with add and having one arg of any type
-    public void beforeAddAdvice() {
-        System.out.println("\n=======>>> Executing @Before advice on addAccount");
+    public void apiAnalytics() {
+        System.out.println("\n=======>>> Executing @Before the Analytics for the API");
     }
-
-
-
 
 
 }
