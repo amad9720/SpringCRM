@@ -1,4 +1,4 @@
-package com.webapp.aopdemo.aspect;
+package com.webapp.aopdemo.aspect_afterreturning;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 @Order(1)
 public class MyDemoLoggingAspect {
 
-    @Before("com.webapp.aopdemo.aspect.AopExpressionsDeclaration.addMethodsPointcuts()") //any method starting with add and having one arg of any type
+    @Before("com.webapp.aopdemo.aspect_afterreturning.AopExpressionsDeclaration.addMethodsPointcuts()") //any method starting with add and having one arg of any type
     public void beforeAddAdvice() {
         System.out.println("\n=======>>> Executing @Before advice on addAccount");
     }
