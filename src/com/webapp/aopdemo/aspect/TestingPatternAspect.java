@@ -1,4 +1,4 @@
-package com.webapp.aopdemo.aspect_afterreturning;
+package com.webapp.aopdemo.aspect;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.stereotype.Component;

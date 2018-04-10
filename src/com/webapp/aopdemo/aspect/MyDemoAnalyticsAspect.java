@@ -1,4 +1,4 @@
-package com.webapp.aopdemo.aspect_afterreturning;
+package com.webapp.aopdemo.aspect;
 
 import com.webapp.aopdemo.Account;
 import org.aspectj.lang.JoinPoint;
@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 @Order(2)
 public class MyDemoAnalyticsAspect {
 
-    @Before("com.webapp.aopdemo.aspect_afterreturning.AopExpressionsDeclaration.addMethodsPointcuts()") //any method starting with add and having one arg of any type
+    @Before("com.webapp.aopdemo.aspect.AopExpressionsDeclaration.addMethodsPointcuts()") //any method starting with add and having one arg of any type
     public void apiAnalytics(JoinPoint joinPoint) {
         // Get the arguments of the method which is intercepted by this advise
 

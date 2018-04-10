@@ -1,4 +1,4 @@
-package com.webapp.aopdemo.aspect_afterreturning;
+package com.webapp.aopdemo.aspect;
 
 import org.aspectj.lang.annotation.Pointcut;
 
@@ -18,4 +18,8 @@ public class AopExpressionsDeclaration {
     //    Combining pointcuts
     @Pointcut("addMethodsPointcuts() && !(getter() || setter())")
     public void forAddNoGetterSetter() {}
+
+    //Pointcuts for @AfterReturning advises
+    @Pointcut("execution(* find*(String))")
+    public void findMathodPointcuts(){}
 }

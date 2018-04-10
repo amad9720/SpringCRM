@@ -4,10 +4,12 @@ import com.webapp.aopdemo.dao.AccountDAO;
 import com.webapp.aopdemo.dao.MembershipDAO;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.util.List;
+
 /**
  * Created by owner on 18-04-07.
  */
-public class MainDemoApp {
+public class MainDemoAfterReturnAOPApp {
     public static void main(String[] args) {
         // Read the java config class
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(DemoConfig.class);
@@ -16,13 +18,14 @@ public class MainDemoApp {
         AccountDAO theAccountDAO = context.getBean("accountDAO", AccountDAO.class);
         MembershipDAO theMembershipDAO = context.getBean("membershipDAO", MembershipDAO.class);
 
-        // Create a new account
-        Account theAccount = new Account("Amadou", "mouhma");
 
         // Call the business method
-        theAccountDAO.addAccount(theAccount);
-        theMembershipDAO.getBooba(theAccount);
-        theMembershipDAO.setSilly();
+        List<Account> accountList = theAccountDAO.findAccount("The Join point is working");
+
+        for (Account theAccount:
+                accountList) {
+            System.out.println(theAccount.getName());
+        }
 
         // Close the context
         context.close();
