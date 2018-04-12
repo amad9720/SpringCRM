@@ -19,7 +19,11 @@ public class AopExpressionsDeclaration {
     @Pointcut("addMethodsPointcuts() && !(getter() || setter())")
     public void forAddNoGetterSetter() {}
 
-    //Pointcuts for @AfterReturning advises
+    //Pointcuts for @AfterReturning / @AfterThrowing and @After advises
     @Pointcut("execution(* find*(String))")
     public void findMathodPointcuts(){}
+
+    //Pointcuts for @Around advises
+    @Pointcut("execution(* com.webapp.aopdemo.service.TrafficFortuneService.get*())")
+    public void getFortuneMathodPointcuts(){}
 }
